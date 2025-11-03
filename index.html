@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="bg">
+      <div class="wrap">
+        <div id="result"><img src="img/title2.png" /></div>
+        <p id="msg"></p>
+        <div id="chance">
+          Life : <i class="fa-solid fa-heart"></i
+          ><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i
+          ><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="insert">
+          <input
+            id="user"
+            placeholder="1부터 100까지의 수"
+            onkeypress="if(event.keyCode == 13) {play()}"
+          />
+          <button id="play">START</button>
+          <button id="reset">RESET</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/custom.js"></script>
+  </body>
+</html>
