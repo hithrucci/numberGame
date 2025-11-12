@@ -19,8 +19,7 @@ function play() {
   console.log(userNum);
   console.log(computerNum);
   if (userNum < 1 || userNum > 100) {
-    msg.textContent = "1부터 100까지의 수를 입력해 주세요.";
-    imgBox.textContent = "";
+    alert("잘못입력하셨습니다.");
     return;
   }
   if (computerNum > userNum) {
@@ -32,6 +31,7 @@ function play() {
     playBtn.disabled = true;
   } else {
     alert("잘못입력하셨습니다.");
+    return;
   }
   chances--;
   switch (chances) {
@@ -73,7 +73,7 @@ user.addEventListener("blur", () => {
 //초기화
 resetBtn.addEventListener("click", reset);
 function reset() {
-  result.textContent = "";
+  // result.textContent = "";
   playBtn.style.color = "#00ff2f";
   imgBox.src = "img/title2.png";
   chances = 5;
