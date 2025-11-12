@@ -14,17 +14,30 @@
 
 body {
   background-color: #222;
+  overflow: hidden;
+}
+
+#stick img {
+  width: 100%;
+}
+#back {
+  position: absolute;
+  top: 200px;
+  left: 16px;
+  font-size: clamp(24px, 3vw, 44px);
+  color: #fe1ffb;
 }
 @media (min-width: 1220px) {
   /*wrap*/
   .bg {
-    width: clamp(700px, 80vw, 1200px);
+    width: clamp(700px, 80vw, 1000px);
     border-radius: 54px;
     height: 500px;
     margin: 210px auto;
     background-color: #70ccd7;
     box-shadow: inset 5px 4px 10px rgba(255, 255, 255);
     box-sizing: border-box;
+    position: relative;
   }
   .wrap {
     box-sizing: border-box;
@@ -91,6 +104,7 @@ body {
     left: 50%;
     bottom: 34%;
     transform: translateX(-50%);
+    z-index: 9999;
   }
   /*input*/
   #user {
@@ -115,6 +129,12 @@ body {
     background-color: #222;
     /* border: 2px solid #00ff2f; */
     color: #00ff2f;
+  }
+  #stick {
+    width: clamp(250px, 40%, 400px);
+    position: absolute;
+    bottom: -40%;
+    right: 0%;
   }
 }
 
@@ -219,6 +239,12 @@ body {
     /* border: 2px solid #00ff2f; */
     color: #00ff2f;
   }
+  #stick {
+    width: clamp(350px, 40%, 400px);
+    position: absolute;
+    bottom: -38%;
+    right: 0%;
+  }
 }
 
 @media (max-width: 720px) and (min-width: 560px) {
@@ -322,6 +348,20 @@ body {
     /* border: 2px solid #00ff2f; */
     color: #00ff2f;
   }
+  #stick {
+    width: clamp(300px, 40%, 400px);
+    position: absolute;
+    bottom: -35%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  #back {
+    position: absolute;
+    top: 40px;
+    left: 16px;
+    font-size: clamp(24px, 3vw, 44px);
+    color: #fe1ffb;
+  }
 }
 @media (max-width: 559px) {
   /*wrap*/
@@ -387,6 +427,7 @@ body {
   #chance i {
     color: red;
   }
+
   /*insert*/
   .insert {
     display: flex;
@@ -416,10 +457,69 @@ body {
     /* border: 2px solid #00ff2f; */
     color: #00ff2f;
   }
+  @keyframes twink {
+    0% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
   #reset {
     font-family: "Galmuri7";
     background-color: #222;
     /* border: 2px solid #00ff2f; */
-    color: #00ff2f;
+    color: rgba(255, 0, 0, 0.5);
   }
+  #stick {
+    width: clamp(270px, 40%, 400px);
+    position: absolute;
+    bottom: -35%;
+    right: 50%;
+    z-index: -1;
+    transform: translateX(50%);
+  }
+  #back {
+    position: absolute;
+    top: 40px;
+    left: 16px;
+    font-size: clamp(24px, 3vw, 44px);
+    color: #fe1ffb;
+  }
+}
+#stick {
+  z-index: 0;
+}
+.insert {
+  z-index: 9999;
+}
+.insert button {
+  z-index: 9999;
+}
+#reset {
+  font-family: "Galmuri7";
+  background-color: #222;
+  /* border: 2px solid #00ff2f; */
+  color: rgba(255, 0, 0, 0.5);
+}
+#reset:hover {
+  color: red;
+}
+button:hover {
+  cursor: pointer;
+  border: 2px solid #00ff2f;
+}
+#back:hover {
+  filter: brightness(3);
+}
+#back {
+  cursor: pointer;
+  will-change: transform;
+}
+#back::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: transparent;
+  pointer-events: auto;
 }

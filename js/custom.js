@@ -88,3 +88,18 @@ function reset() {
 playBtn.addEventListener("click", play);
 //play()는 자동으로 함수를 호출
 //클릭했을때 함수를 호출하려면 ()를 제거
+let back = document.querySelector("#back");
+back.addEventListener("mouseenter", () => {
+  gsap.to(back, {
+    x: -18,
+    duration: 0.5,
+    scale: 1.3,
+  });
+});
+back.addEventListener("mouseleave", () => {
+  gsap.to(back, {
+    x: 0,
+    duration: 0.5,
+    scale: 1,
+  });
+});
