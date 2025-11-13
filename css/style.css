@@ -13,7 +13,8 @@
 }
 
 body {
-  background-color: #222;
+  background-image: url("../img/bg.png");
+  background-size: contain;
   overflow: hidden;
 }
 
@@ -30,7 +31,11 @@ body {
 #keyboard img {
   width: 100%;
 }
+
 @media (min-width: 1220px) {
+  body {
+    background-size: 70%;
+  }
   /*wrap*/
   .bg {
     width: clamp(700px, 80vw, 1000px);
@@ -38,7 +43,8 @@ body {
     height: 500px;
     margin: 210px auto;
     background-color: #70ccd7;
-    box-shadow: inset 5px 4px 10px rgba(255, 255, 255);
+    box-shadow: inset 5px 4px 10px rgba(255, 255, 255),
+      inset 5px 5px 20px rgba(0, 0, 0, 0.8);
     box-sizing: border-box;
     position: relative;
   }
@@ -139,14 +145,14 @@ body {
     bottom: -40%;
     right: 0%;
   }
-  /* #keyboard {
-    width: clamp(300px, 40%, 500px);
+  #keyboard {
+    width: clamp(300px, 50%, 750px);
 
     object-fit: cover;
     position: absolute;
-    bottom: -55%;
+    bottom: -68%;
     left: 0%;
-  } */
+  }
 }
 
 @media (min-width: 720px) and (max-width: 1219px) {
