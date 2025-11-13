@@ -24,10 +24,40 @@ function play() {
   }
   if (computerNum > userNum) {
     imgBox.src = "img/up.png";
+    gsap
+      .timeline()
+      .to("#result", {
+        repeat: 4,
+        y: -20,
+        yoyo: true,
+        duration: 0.2,
+      })
+      .to("#result", {
+        y: 0,
+        duration: 0.2,
+      });
   } else if (computerNum < userNum) {
     imgBox.src = "img/down.png";
+    gsap
+      .timeline()
+      .to("#result", {
+        repeat: 4,
+        y: 20,
+        yoyo: true,
+        duration: 0.2,
+      })
+      .to("#result", {
+        y: 0,
+        duration: 0.2,
+      });
   } else if (computerNum == userNum) {
     imgBox.src = "img/bingo.png";
+    gsap.to("#result", {
+      repeat: 5,
+      scale: 2,
+      yoyo: true,
+      duration: 0.2,
+    });
     playBtn.disabled = true;
   } else {
     alert("잘못입력하셨습니다.");
@@ -59,6 +89,17 @@ function play() {
     chance.innerHTML = ` Life : 
     <i class="fa-solid fa-heart-crack" style="color: #666"></i><i class="fa-solid fa-heart-crack" style="color: #666"></i><i class="fa-solid fa-heart-crack" style="color: #666"></i><i class="fa-solid fa-heart-crack" style="color: #666"></i><i class="fa-solid fa-heart-crack" style="color: #666"></i>`;
     imgBox.src = "img/gameover.png";
+    gsap.fromTo(
+      "#result",
+      {
+        filter: "brightness(1)",
+      },
+      {
+        filter: "brightness(0.1)",
+
+        duration: 2,
+      }
+    );
   }
 }
 
@@ -84,6 +125,9 @@ function reset() {
   playBtn.disabled = false;
   randomNum();
   user.value = "";
+  gsap.to("#result", {
+    filter: "brightness(1)",
+  });
 }
 playBtn.addEventListener("click", play);
 //play()는 자동으로 함수를 호출
