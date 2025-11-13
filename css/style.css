@@ -27,6 +27,9 @@ body {
   font-size: clamp(24px, 3vw, 44px);
   color: #fe1ffb;
 }
+#keyboard img {
+  width: 100%;
+}
 @media (min-width: 1220px) {
   /*wrap*/
   .bg {
@@ -136,6 +139,14 @@ body {
     bottom: -40%;
     right: 0%;
   }
+  /* #keyboard {
+    width: clamp(300px, 40%, 500px);
+
+    object-fit: cover;
+    position: absolute;
+    bottom: -55%;
+    left: 0%;
+  } */
 }
 
 @media (min-width: 720px) and (max-width: 1219px) {
