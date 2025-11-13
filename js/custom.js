@@ -103,3 +103,39 @@ back.addEventListener("mouseleave", () => {
     scale: 1,
   });
 });
+const tutorial = document.querySelector("#tutorial");
+const target = document.getElementById("typing");
+const text =
+  "\n1. 1부터 100까지의 수를 입력하고 START 또는 ENTER\n2. 화면 중앙의 결과 확인(UP,DOWN)\n3. 실패시 Life-1\n4. Life 모두 소진시 Game Over\n5. reset을 클릭해서 재도전!";
+
+let i = 0;
+let typingTimeout = null; // setTimeout ID 저장용
+
+function type() {
+  // 중간에 tutorial이 꺼져버렸으면 타이핑 중단
+  if (!tutorial.classList.contains("on")) return;
+
+  if (i < text.length) {
+    target.textContent += text[i];
+
+    let speed = Math.random() * 80 + 40;
+    i++;
+    typingTimeout = setTimeout(type, speed);
+  }
+}
+
+tutorial.addEventListener("click", () => {
+  tutorial.classList.toggle("on");
+
+  // on 이 된 경우 → 타이핑 시작
+  if (tutorial.classList.contains("on")) {
+    // 처음부터 다시
+    target.textContent = "";
+    i = 0;
+    type();
+  } else {
+    // off 된 경우 → 타이핑 중단 + 텍스트 지우기
+    clearTimeout(typingTimeout);
+    target.textContent = "";
+  }
+});

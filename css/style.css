@@ -7,17 +7,75 @@
   font-weight: 700;
   font-display: swap;
 }
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+@font-face {
+  font-family: "ChangwonDanggamAsak";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
 * {
   margin: 0;
   padding: 0;
 }
+#user {
+  width: clamp(250px, 5vw, 350px);
+}
+#typing {
+  font-size: clamp(12px, 1vw, 16px);
+  font-family: "Galmuri9";
+  white-space: pre-wrap;
+  color: #fff;
+  text-align: left;
+  display: none;
+}
+#tutorial {
+  position: absolute;
+  top: 105%;
+  border: 2px solid #fe1ffb;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 18px 60px;
+  cursor: pointer;
+}
+#tutorial h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(18px, 5vw, 36px);
+  color: #db58d9;
+  font-family: "ChangwonDanggamAsak";
+  height: auto;
+}
+#tutorial.on {
+  padding-bottom: 30px;
+}
+#tutorial:hover {
+  color: #fe1ffb;
+  background-color: rgba(255, 255, 255, 0.5);
+}
 
+#tutorial.on #typing {
+  display: block;
+}
 body {
   background-image: url("../img/bg.png");
   background-size: contain;
   overflow: hidden;
+  animation: starFlow 25s linear infinite;
 }
-
+@keyframes starFlow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 500px 250px;
+  }
+  100% {
+    background-position: -200px 100px; /* 원하는 흐름 방향 */
+  }
+}
 #stick img {
   width: 100%;
 }
@@ -156,6 +214,28 @@ body {
 }
 
 @media (min-width: 720px) and (max-width: 1219px) {
+  #tutorial {
+    position: absolute;
+    top: 105%;
+    border: 2px solid #fe1ffb;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px 36px;
+    cursor: pointer;
+  }
+
+  #tutorial h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(18px, 5vw, 36px);
+    color: #db58d9;
+    font-family: "ChangwonDanggamAsak";
+    height: auto;
+  }
+  #tutorial.on {
+    padding-bottom: 6px;
+  }
   /*wrap*/
   .bg {
     width: clamp(700px, 80vw, 1200px);
@@ -265,6 +345,30 @@ body {
 }
 
 @media (max-width: 720px) and (min-width: 560px) {
+  #tutorial {
+    position: absolute;
+    top: 133%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #fe1ffb;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px 36px;
+    cursor: pointer;
+  }
+  #tutorial.on {
+    width: 80%;
+  }
+  #tutorial h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(18px, 5vw, 36px);
+    color: #db58d9;
+    font-family: "ChangwonDanggamAsak";
+    height: auto;
+  }
+
   /*wrap*/
   .bg {
     width: 100%;
@@ -381,12 +485,36 @@ body {
   }
 }
 @media (max-width: 559px) {
+  #tutorial {
+    position: absolute;
+    top: 133%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #fe1ffb;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px 36px;
+    cursor: pointer;
+    width: 30%;
+  }
+  #tutorial h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(18px, 5vw, 36px);
+    color: #db58d9;
+    font-family: "ChangwonDanggamAsak";
+    height: auto;
+  }
+  #tutorial.on {
+    width: 80%;
+  }
   /*wrap*/
   .bg {
     width: 100%;
     border-radius: 54px;
     height: 450px;
-    margin: 210px auto;
+    margin: 80px auto;
     background-color: #70ccd7;
     box-shadow: inset 5px 4px 10px rgba(255, 255, 255);
     box-sizing: border-box;
