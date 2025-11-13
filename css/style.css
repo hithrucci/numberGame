@@ -63,17 +63,23 @@ body {
   background-image: url("../img/bg.png");
   background-size: contain;
   overflow: hidden;
-  animation: starFlow 25s linear infinite;
+  animation: starFlow 50s linear infinite;
 }
 @keyframes starFlow {
   0% {
     background-position: 0 0;
   }
+  25% {
+    background-position: 500px 250px;
+  }
   50% {
+    background-position: 0 0;
+  }
+  75% {
     background-position: 500px 250px;
   }
   100% {
-    background-position: -200px 100px; /* 원하는 흐름 방향 */
+    background-position: 0 0; /* 원하는 흐름 방향 */
   }
 }
 #stick img {
