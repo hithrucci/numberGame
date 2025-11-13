@@ -540,3 +540,6 @@ button:hover {
   background: transparent;
   pointer-events: auto;
 }
+::placeholder {
+  color: #000;
+}
