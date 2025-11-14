@@ -150,7 +150,7 @@ back.addEventListener("mouseleave", () => {
 const tutorial = document.querySelector("#tutorial");
 const target = document.getElementById("typing");
 const text =
-  "\n1. 1부터 100까지의 수를 입력하고 START 또는 ENTER\n2. 화면 중앙의 결과 확인(UP,DOWN)\n3. 실패시 Life-1\n4. Life 모두 소진시 Game Over\n5. reset을 클릭해서 재도전!";
+  "\n1. 1부터 100까지의 수를 입력하고 START 또는 ENTER\n2. 화면 중앙의 결과 확인(UP,DOWN)\n3. 실패시 Life - 1\n4. Life 모두 소진시 Game Over\n5. reset을 클릭해서 재도전!";
 
 let i = 0;
 let typingTimeout = null; // setTimeout ID 저장용

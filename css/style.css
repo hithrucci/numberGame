@@ -32,11 +32,11 @@
 }
 #tutorial {
   position: absolute;
-  top: 105%;
+  top: 100%;
   border: 2px solid #fe1ffb;
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 18px 60px;
+  padding: 8px 60px;
   cursor: pointer;
 }
 #tutorial h3 {
@@ -49,7 +49,7 @@
   height: auto;
 }
 #tutorial.on {
-  padding-bottom: 30px;
+  padding-bottom: 8px;
 }
 #tutorial:hover {
   color: #fe1ffb;
@@ -93,6 +93,24 @@ body {
 }
 
 @media (min-width: 1220px) {
+  #tutorial {
+    position: absolute;
+    top: 100%;
+    border: 2px solid #fe1ffb;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px 60px;
+    cursor: pointer;
+  }
+  #tutorial h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(18px, 5vw, 34px);
+    color: #db58d9;
+    font-family: "ChangwonDanggamAsak";
+    height: auto;
+  }
   body {
     background-size: 70%;
   }
@@ -376,7 +394,7 @@ body {
     width: 100%;
     border-radius: 54px;
     height: 450px;
-    margin: 210px auto;
+    margin: 80px auto;
     background-color: #70ccd7;
     box-shadow: inset 5px 4px 10px rgba(255, 255, 255);
     box-sizing: border-box;
