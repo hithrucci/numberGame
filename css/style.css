@@ -133,7 +133,7 @@ body {
     height: 750px;
     left: 50%;
     top: 50%;
-    padding-top: 50px;
+    padding-top: 20px;
     transform: translate(-50%, -50%);
     background-image: url("../img/frame6.png");
     background-position: center;

@@ -167,7 +167,8 @@ function type() {
     typingTimeout = setTimeout(type, speed);
   }
 }
-
+tutorial.classList.toggle("on");
+type();
 tutorial.addEventListener("click", () => {
   tutorial.classList.toggle("on");
 
